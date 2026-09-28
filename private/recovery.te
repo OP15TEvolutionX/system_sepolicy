@@ -116,6 +116,9 @@ recovery_only(`
   # Read /sysfs/fs/ext4/features
   r_dir_file(recovery, sysfs_fs_ext4_features)
 
+  # Read /sys/fs/f2fs/features when libfs_mgr checks supported userdata options.
+  r_dir_file(recovery, sysfs_fs_f2fs)
+
   # Read from /sys/class/leds/lcd-backlight/max_brightness and write to /s/c/l/l/brightness to
   # control backlight brightness.
   allow recovery sysfs_leds:dir r_dir_perms;
